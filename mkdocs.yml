@@ -1,0 +1,14 @@
+site_name: SSL Robotics Docs
+
+theme:
+  name: material
+
+nav:
+  - Início: index.md
+  - Projeto:
+      - Arquitetura: projeto/arquitetura.md
+      - Roadmap: projeto/roadmap.md
+  - Mecânica: mecanica/index.md
+  - Eletrônica: eletronica/index.md
+  - Programação: programacao/index.md
+  - Estudos: estudos/index.md
