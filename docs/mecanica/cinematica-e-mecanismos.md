@@ -5,7 +5,7 @@ Com o objetivo de tentar explicar de uma maneira mais detalhada, esta será uma 
 A cinemática servirá para entender como o movimento linear e angular do robô pode ser controlado através de cada motor, isto é, como cada motor pode contribuir com o movimento do robô no ambiente em que ele está inserido.
 
 <p align="center">
-    <img src="../assets/images/mecanica/cinematica_1.jpg"
+    <img src="../../assets/images/mecanica/cinematica_1.jpg"
     width="500">
 </p>
 
@@ -37,7 +37,7 @@ Dois sistemas de referência são utilizados na análise:
 - **Base do Robô** \((X_R, Y_R)\): sistema de referência móvel preso ao centro do robô. Acompanha o robô em sua rotação. É neste referencial que os motores atuam.
 
 <p align="center">
-    <img src="../assets/images/mecanica/cinematica_2.jpg"
+    <img src="../../assets/images/mecanica/cinematica_2.jpg"
     width="500">
 </p>
 
@@ -57,9 +57,10 @@ R(\theta) =
 Cada roda sueca gera uma velocidade linear tangencial perpendicular ao seu eixo de giro. A contribuição dessa velocidade nos eixos \(X_R\) e \(Y_R\) do robô depende do ângulo \(\alpha_n\) que a roda faz com o eixo \(X_R\). Para as 4 rodas \((a, b, c, d)\):
 
 <p align="center">
-    <img src="../assets/images/mecanica/cinematica_3.jpg"
+    <img src="../../assets/images/mecanica/cinematica_3.jpg"
     width="500">
 </p>
+
 
 | Roda | Ângulo \((\alpha_n)\) | Contribuição em \(X_R\) | Contribuição em \(Y_R\) |
 |---|---|---|---|

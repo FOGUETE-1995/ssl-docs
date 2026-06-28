@@ -9,7 +9,7 @@ LINKS E REFERÊNCIAS
 
 ## Esquemáticos do Robô
 
-!!! warning "Pendente"
+     "Pendente"
     Os links abaixo ainda precisam ser adicionados.
 
 - Esquemáticos atuais do robô: [INSERIR LINK DO REPOSITÓRIO/PASTA DO TIME]

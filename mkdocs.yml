@@ -11,20 +11,28 @@ nav:
       - Roadmap: projeto/roadmap.md
   - Mecânica:
       - Visão geral: mecanica/index.md
-      - CAD básico: mecanica/fundamentos-cad.md
-      - Modelagem avançada: mecanica/modelagem-avancada.md
+      - Locomoção: mecanica/locomocao.md
+      - Kicker: mecanica/kicker.md
+      - Dribler: mecanica/dribler.md
       - Cinemática e mecanismos: mecanica/cinematica-e-mecanismos.md
       - Projeto e FEA: mecanica/projeto-e-fea.md
   - Eletrônica:
       - Visão geral: eletronica/index.md
-      - Fundamentos: eletronica/fundamentos.md
-      - AmpOps, fontes e BLDC: eletronica/ampops-fontes-bldc.md
-      - Potência, sensores e PCB: eletronica/potencia-sensores-pcb.md
+      - Locomoção: eletronica/locomocao.md
+      - Kicker: eletronica/kicker.md
+      - Dribler: eletronica/dribler.md
+      - Componentes: eletronica/componentes.md
+      - Esquemáticos: eletronica/esquematico.md
+      - PCB: eletronica/pcb.md
   - Programação:
       - Visão geral: programacao/index.md
+      - Locomoção: programacao/locomocao.md
+      - Kicker: programacao/kicker.md
+      - Dribler: programacao/dribler.md
       - Fundamentos: programacao/fundamentos.md
-      - Firmware: programacao/firmware.md
       - Estratégia e visão: programacao/estrategia.md
+      - Interface: programacao/interface.md
+      - Filtros: programacao/filtros.md
   - Estudos:
       - Visão geral: estudos/index.md
       - Mecânica: estudos/mecanica.md
