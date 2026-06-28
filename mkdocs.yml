@@ -6,10 +6,36 @@ theme:
 nav:
   - Início: index.md
   - Projeto:
+      - SSL: projeto/ssl.md
       - Arquitetura: projeto/arquitetura.md
       - Roadmap: projeto/roadmap.md
-  - Mecânica: mecanica/index.md
-  - Eletrônica: eletronica/index.md
-  - Programação: programacao/index.md
-  - Estudos: estudos/index.md
+  - Mecânica:
+      - Visão geral: mecanica/index.md
+      - CAD básico: mecanica/fundamentos-cad.md
+      - Modelagem avançada: mecanica/modelagem-avancada.md
+      - Cinemática e mecanismos: mecanica/cinematica-e-mecanismos.md
+      - Projeto e FEA: mecanica/projeto-e-fea.md
+  - Eletrônica:
+      - Visão geral: eletronica/index.md
+      - Fundamentos: eletronica/fundamentos.md
+      - AmpOps, fontes e BLDC: eletronica/ampops-fontes-bldc.md
+      - Potência, sensores e PCB: eletronica/potencia-sensores-pcb.md
+  - Programação:
+      - Visão geral: programacao/index.md
+      - Fundamentos: programacao/fundamentos.md
+      - Firmware: programacao/firmware.md
+      - Estratégia e visão: programacao/estrategia.md
+  - Estudos:
+      - Visão geral: estudos/index.md
+      - Mecânica: estudos/mecanica.md
+      - Eletrônica: estudos/eletronica.md
+      - Programação: estudos/programacao.md
   - Referências: referencias.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
