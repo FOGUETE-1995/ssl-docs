@@ -1,0 +1,1869 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../mecanica/">
+      
+      
+        <link rel="next" href="../programacao/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Eletrônica - SSL Robotics Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-1-fundamentos-de-eletronica" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SSL Robotics Docs" class="md-header__button md-logo" aria-label="SSL Robotics Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SSL Robotics Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Eletrônica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SSL Robotics Docs" class="md-nav__button md-logo" aria-label="SSL Robotics Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SSL Robotics Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/ssl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/arquitetura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecânica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mecânica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mecanica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mecanica/fundamentos-cad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mecanica/modelagem-avancada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelagem avançada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mecanica/cinematica-e-mecanismos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cinemática e mecanismos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mecanica/projeto-e-fea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto e FEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eletrônica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eletrônica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eletronica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eletronica/fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eletronica/ampops-fontes-bldc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AmpOps, fontes e BLDC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eletronica/potencia-sensores-pcb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Potência, sensores e PCB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programacao/fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programacao/firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programacao/estrategia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estratégia e visão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estudos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estudos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mecanica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecânica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eletrônica
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eletrônica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-1-fundamentos-de-eletronica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MÓDULO 1 — Fundamentos de Eletrônica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MÓDULO 1 — Fundamentos de Eletrônica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceitos-fundamentais-de-eletricidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceitos Fundamentais de Eletricidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-passivos-filtros-rc-rl-e-rlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes Passivos — Filtros RC, RL e RLC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semicondutores-diodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semicondutores — Diodos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transistores-bjt-uso-como-chave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transistores BJT — Uso como Chave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mosfets-chaves-de-potencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOSFETs — Chaves de Potência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocolos-de-comunicacao-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocolos de Comunicação Digital
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-2-amplificadores-operacionais-fontes-e-motores-bldc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MÓDULO 2 — Amplificadores Operacionais, Fontes e Motores BLDC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MÓDULO 2 — Amplificadores Operacionais, Fontes e Motores BLDC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amplificadores-operacionais-ampop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amplificadores Operacionais (AmpOp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fontes-chaveadas-buck-e-boost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fontes Chaveadas — Buck e Boost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoramento-de-tensao-e-corrente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoramento de Tensão e Corrente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motores-brushless-dc-bldc-e-foc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motores Brushless DC (BLDC) e FOC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-3-eletronica-de-potencia-sensores-e-projeto-de-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MÓDULO 3 — Eletrônica de Potência, Sensores e Projeto de PCB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MÓDULO 3 — Eletrônica de Potência, Sensores e Projeto de PCB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kicker-de-alta-tensao-sistema-futuro-com-lt3751" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kicker de Alta Tensão — Sistema Futuro com LT3751
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistema em desenvolvimento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoders-e-sensores-de-posicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoders e Sensores de Posição
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensores-opticos-ball-detection-e-ir-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensores Ópticos — Ball Detection e IR Controller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-de-leds-e-drivers-de-corrente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistema de LEDs e Drivers de Corrente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comunicacao-rf-sx1280-e-sky66112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comunicação RF — SX1280 e SKY66112
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projeto-de-pcb-profissional-no-altium-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projeto de PCB Profissional no Altium Designer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-1-fundamentos-de-eletronica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MÓDULO 1 — Fundamentos de Eletrônica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MÓDULO 1 — Fundamentos de Eletrônica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceitos-fundamentais-de-eletricidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceitos Fundamentais de Eletricidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-passivos-filtros-rc-rl-e-rlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes Passivos — Filtros RC, RL e RLC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semicondutores-diodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semicondutores — Diodos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transistores-bjt-uso-como-chave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transistores BJT — Uso como Chave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mosfets-chaves-de-potencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOSFETs — Chaves de Potência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocolos-de-comunicacao-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocolos de Comunicação Digital
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-2-amplificadores-operacionais-fontes-e-motores-bldc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MÓDULO 2 — Amplificadores Operacionais, Fontes e Motores BLDC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MÓDULO 2 — Amplificadores Operacionais, Fontes e Motores BLDC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amplificadores-operacionais-ampop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amplificadores Operacionais (AmpOp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fontes-chaveadas-buck-e-boost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fontes Chaveadas — Buck e Boost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoramento-de-tensao-e-corrente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoramento de Tensão e Corrente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motores-brushless-dc-bldc-e-foc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motores Brushless DC (BLDC) e FOC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-3-eletronica-de-potencia-sensores-e-projeto-de-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MÓDULO 3 — Eletrônica de Potência, Sensores e Projeto de PCB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MÓDULO 3 — Eletrônica de Potência, Sensores e Projeto de PCB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kicker-de-alta-tensao-sistema-futuro-com-lt3751" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kicker de Alta Tensão — Sistema Futuro com LT3751
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistema em desenvolvimento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoders-e-sensores-de-posicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoders e Sensores de Posição
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensores-opticos-ball-detection-e-ir-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensores Ópticos — Ball Detection e IR Controller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-de-leds-e-drivers-de-corrente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistema de LEDs e Drivers de Corrente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comunicacao-rf-sx1280-e-sky66112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comunicação RF — SX1280 e SKY66112
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projeto-de-pcb-profissional-no-altium-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projeto de PCB Profissional no Altium Designer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Eletrônica</h1>
+
+<p>ROTEIRO DE ESTUDOS — ELETRÔNICA</p>
+<p>O roteiro parte dos fundamentos e progride até os tópicos específicos de toda a arquitetura eletrônica do robô SSL — desde drivers de motor e encoders até o kicker de alta tensão, sensores e projeto de PCB profissional no Altium Designer.</p>
+<h2 id="modulo-1-fundamentos-de-eletronica">MÓDULO 1 — Fundamentos de Eletrônica</h2>
+<p><em>Objetivo: construir a base necessária para entender qualquer circuito do robô.</em></p>
+<h3 id="conceitos-fundamentais-de-eletricidade">Conceitos Fundamentais de Eletricidade</h3>
+<ul>
+<li>Lei de Ohm e Leis de Kirchhoff (KVL e KCL).</li>
+<li>Resistores: série, paralelo, divisor de tensão e de corrente.</li>
+<li>Capacitores: carga/descarga, constante de tempo <span class="arithmatex">\(\tau = RC\)</span>, armazenamento de energia.</li>
+<li>Indutores: campo magnético, relação tensão-corrente, impedância.</li>
+<li>Potência elétrica: <span class="arithmatex">\(P = V \cdot I = V^2/R = I^2 \cdot R\)</span>.</li>
+<li>Análise de circuitos AC: impedância, fasores, potência reativa.</li>
+</ul>
+<p><em>Ferramenta: simular circuitos no Falstad Circuit Simulator (gratuito, online) antes de montar na bancada.</em></p>
+<h3 id="componentes-passivos-filtros-rc-rl-e-rlc">Componentes Passivos — Filtros RC, RL e RLC</h3>
+<ul>
+<li>Filtros passivos: passa-baixa, passa-alta, passa-banda com RC e LC.</li>
+<li>Constante de tempo RC: carregamento de capacitores no kicker <span class="arithmatex">\((\tau = R \cdot C)\)</span>.</li>
+<li>Circuitos RLC: resposta natural, frequência de ressonância, fator de qualidade Q.</li>
+<li>Indutores em conversores chaveados: armazenamento e liberação de energia.</li>
+</ul>
+<h3 id="semicondutores-diodos">Semicondutores — Diodos</h3>
+<ul>
+<li>Diodos retificadores: curva V-I, tensão de limiar, uso em proteção de polaridade.</li>
+<li>Diodo Schottky (ex: MBRB40250): baixa queda de tensão, alta velocidade — usado no kicker futuro.</li>
+<li>Diodo ultrarrápido (ex: ES3J): recovery time curto — essencial em conversores Boost.</li>
+<li>Diodo TVS (ex: SMBJ13CA): proteção contra surtos de tensão transientes.</li>
+<li>Diodo zener: regulação de tensão, uso como referência.</li>
+<li>Diodo de roda livre (flyback): proteção contra corrente reversa de bobinas — 1N4007 e 1N5408 no kicker atual.</li>
+</ul>
+<h3 id="transistores-bjt-uso-como-chave">Transistores BJT — Uso como Chave</h3>
+<ul>
+<li>Estrutura NPN e PNP: regiões de operação (corte, ativo, saturação).</li>
+<li>Transistor como chave digital: calcular resistor de base para saturação.</li>
+<li>2N2222A: transistor NPN de uso geral — usado no kicker para acionar relé e MOSFET.</li>
+<li>Configuração Totem-Pole (Q1+Q2 no kicker): por que dois transistores em série invertem a lógica do gate.</li>
+<li>Pull-up e pull-down resistivos: R4 e R5 no circuito do kicker.</li>
+<li>Parâmetro hFE (ganho de corrente): dimensionamento da corrente de base.</li>
+</ul>
+<h3 id="mosfets-chaves-de-potencia">MOSFETs — Chaves de Potência</h3>
+<ul>
+<li>MOSFET canal N e canal P: tensão gate-source (VGS), threshold voltage.</li>
+<li>Regiões de operação: corte, linear (triodo), saturação.</li>
+<li>IRLZ44N: MOSFET canal N de potência — aciona a bobina do kicker atual.</li>
+<li>RDS(ON): resistência em condução — impacta dissipação de calor.</li>
+<li>Capacitância de gate: por que é necessário um driver de gate para chaveamento rápido.</li>
+<li>Safe Operating Area (SOA): limites de tensão, corrente e temperatura.</li>
+</ul>
+<h3 id="protocolos-de-comunicacao-digital">Protocolos de Comunicação Digital</h3>
+<ul>
+<li>UART: bits start/stop, baud rate — comunicação ESP32 ↔ STM32.</li>
+<li>I2C: SDA/SCL, endereçamento 7-bit, resistores de pull-up — encoder MT6701CT e INA226.</li>
+<li>SPI: MOSI/MISO/SCK/CS, modo 0/1/2/3 — rádio SX1280 e kicker.</li>
+<li>PWM: duty cycle, frequência, resolução — controle de motores e LEDs.</li>
+<li>ADC: resolução, tensão de referência, oversampling — leitura de sensores e Ball Detection.</li>
+<li>GPIO, Timers, DMA: periféricos essenciais dos STM32.</li>
+</ul>
+<h2 id="modulo-2-amplificadores-operacionais-fontes-e-motores-bldc">MÓDULO 2 — Amplificadores Operacionais, Fontes e Motores BLDC</h2>
+<p><em>Objetivo: entender os blocos analógicos, conversores de energia e o controle FOC dos motores.</em></p>
+<h3 id="amplificadores-operacionais-ampop">Amplificadores Operacionais (AmpOp)</h3>
+<ul>
+<li>Conceito de AmpOp ideal: ganho infinito, impedância de entrada infinita, saída ideal.</li>
+<li>Realimentação negativa: como estabiliza o ganho e define o comportamento do circuito.</li>
+<li>Configurações fundamentais: inversor, não-inversor, seguidor de tensão (buffer), somador, subtrator.</li>
+<li>Amplificador de instrumentação: mede pequenas diferenças de tensão com alta CMRR.</li>
+<li>Amplificador transimpedância (TIA): converte corrente em tensão — usado no fotodiodo da Ball Detection (OPA320).</li>
+<li>OPA320: AmpOp rail-to-rail de precisão — analisar o datasheet e entender os parâmetros: GBW, slew rate, offset.</li>
+<li>MCP6002: AmpOp de uso geral — usado no circuito do kicker para monitoramento e comparação de tensão.</li>
+<li>Comparadores: diferença entre AmpOp em malha aberta e comparador dedicado.</li>
+<li>Filtros ativos de 1ª e 2ª ordem: passa-baixa Sallen-Key, uso na filtragem de sinais de sensores.</li>
+</ul>
+<h3 id="fontes-chaveadas-buck-e-boost">Fontes Chaveadas — Buck e Boost</h3>
+<ul>
+<li>Conversor Buck (Step-Down): indutor + MOSFET + diodo + capacitor — gera 12 V, 5 V a partir da bateria.</li>
+<li>LMR23630: CI Buck utilizado no Powerboard — analisar datasheet: frequência, indutor, resistores de feedback.</li>
+<li>Conversor Boost (Step-Up): como eleva a tensão — usado para alimentar os motores e o kicker.</li>
+<li>Duty cycle: relação entre tensão de entrada e saída em Buck <span class="arithmatex">\((V_{out} = D \cdot V_{in})\)</span> e Boost <span class="arithmatex">\((V_{out} = V_{in}/(1-D))\)</span>.</li>
+<li>Ondulação de corrente (ripple): cálculo do indutor e capacitor de saída.</li>
+<li>Soft-start: como evitar pico de corrente na energização.</li>
+<li>Hot-Swap Controller LTC4231: proteção de inrush current e curto-circuito na entrada da Powerboard.</li>
+<li>Regulador Linear LDO (LT3080): gera 3,3 V estável para eletrônica digital — baixo ruído, sem ripple.</li>
+</ul>
+<h3 id="monitoramento-de-tensao-e-corrente">Monitoramento de Tensão e Corrente</h3>
+<ul>
+<li>Shunt resistor: medir corrente pela queda de tensão em resistor de baixo valor.</li>
+<li>INA226: CI monitor de tensão e corrente via I2C — lê corrente com shunt de 1 mΩ, envia dados à Mainboard.</li>
+<li>Registros do INA226: configuração de averaging, leitura de bus voltage, shunt voltage e power.</li>
+<li>Parâmetros: resolução de corrente, faixa de medição, endereço I2C.</li>
+</ul>
+<h3 id="motores-brushless-dc-bldc-e-foc">Motores Brushless DC (BLDC) e FOC</h3>
+<ul>
+<li>Estrutura BLDC: estator com 3 fases, rotor com imãs permanentes, notação 12N14P.</li>
+<li>KV (rpm/V): relação velocidade × tensão; torque e corrente: <span class="arithmatex">\(T = K_t \times I\)</span>.</li>
+<li>Vantagens do Gimbal Motor: baixo KV, alta resistência de fase, controle suave em baixas velocidades.</li>
+<li>Driver DRV8313: 3 half-bridges integradas, interface 3×PWM — analisar tabela de verdade do datasheet.</li>
+<li>FOC: transformadas de Clarke e Park, vetores d-q, controle independente de torque e fluxo.</li>
+<li>SimpleFOClibrary: BLDCMotor, BLDCDriver3PWM, modos de controle (open-loop, velocity, angle).</li>
+<li>Tuning de PID: ajuste de P, I, D para controle de velocidade — usar monitor serial do SimpleFOC.</li>
+</ul>
+<h2 id="modulo-3-eletronica-de-potencia-sensores-e-projeto-de-pcb">MÓDULO 3 — Eletrônica de Potência, Sensores e Projeto de PCB</h2>
+<p><em>Objetivo: entender os circuitos mais complexos do robô (kicker de alta tensão, sensores, comunicação RF) e aprender a projetar PCBs profissionais no Altium Designer.</em></p>
+<h3 id="kicker-de-alta-tensao-sistema-futuro-com-lt3751">Kicker de Alta Tensão — Sistema Futuro com LT3751</h3>
+<h3 id="sistema-em-desenvolvimento">Sistema em desenvolvimento</h3>
+<p>O kicker futuro opera com até 244 V e capacitores de alta energia (~107 J). Estudo obrigatório antes de qualquer trabalho neste circuito.</p>
+<p>Bloco de carregamento — Conversor Boost de alta tensão:</p>
+<ul>
+<li>LT3751: CI controlador Boost dedicado a carregamento de capacitores — controla tensão final, detecta fim de carga (DONE), possui UVLO e OVLO.</li>
+<li>FDS2582: MOSFET de chaveamento do Boost — analisar tensão de drain, corrente de pico, RDS(ON).</li>
+<li>Indutor DA2034: armazenamento de energia durante o chaveamento do Boost.</li>
+<li>ES3J: diodo ultrarrápido de retificação do Boost.</li>
+<li>Capacitores 1800 µF / 250 V: banco de energia — energia <span class="arithmatex">\(E = \frac{1}{2}CV^2 \approx 107\ J\)</span> a 244 V.</li>
+<li>SMBJ13CA: diodo TVS de proteção contra transientes.</li>
+</ul>
+<p>Bloco de descarga — Chaveamento de alta corrente:</p>
+<ul>
+<li>IKB40N65ES5: IGBT de potência 40 A / 650 V — por que usar IGBT em vez de MOSFET para esta aplicação.</li>
+<li>FAN3229: driver de gate de alta corrente — aciona o gate do IGBT rapidamente para minimizar perdas de chaveamento.</li>
+<li>MBRB40250: diodo Schottky de potência — proteção de corrente reversa na bobina.</li>
+<li>MCP6002 no kicker: configurado como comparador para detectar tensão dos capacitores e sinalizar “carregado”.</li>
+<li>Cálculo da energia de chute: <span class="arithmatex">\(E = \frac{1}{2}CV^2\)</span> e relação com velocidade da bola.</li>
+</ul>
+<h3 id="encoders-e-sensores-de-posicao">Encoders e Sensores de Posição</h3>
+<ul>
+<li>Encoder magnético vs. óptico: vantagens do magnético em ambiente com vibração e poeira.</li>
+<li>MT6701CT: encoder magnético absoluto de 14 bits — leitura de ângulo via I2C.</li>
+<li>iC-PX2604: encoder incremental com canais A/B — usado na arquitetura de referência, saídas para Timers do STM32.</li>
+<li>Canais A e B em quadratura: como determinar direção de rotação e contar pulsos.</li>
+<li>Multiplexador TCA9548A: por que usar com vários sensores I2C de mesmo endereço.</li>
+</ul>
+<h3 id="sensores-opticos-ball-detection-e-ir-controller">Sensores Ópticos — Ball Detection e IR Controller</h3>
+<ul>
+<li>Fotodiodo TEMD1000: converte luz incidente em corrente fotovoltaica proporcional à intensidade.</li>
+<li>LED IR VSMB2000: emite luz infravermelha modulada para detecção da bola.</li>
+<li>Amplificador transimpedância com OPA320: converte corrente do fotodiodo em tensão mensurável pelo ADC.</li>
+<li>Ganho do TIA: <span class="arithmatex">\(R_{feedback}\)</span> determina a relação corrente→tensão <span class="arithmatex">\((V_{out} = I_{ph} \times R_f)\)</span>.</li>
+<li>IR Controller (STM32F031): microcontrolador dedicado que lê 5 sensores IR, filtra e envia dados via UART.</li>
+<li>Sensores RGB TCS34725 no Pattern Identification: como identificar o padrão de cores do robô para a câmera SSL-Vision.</li>
+</ul>
+<h3 id="sistema-de-leds-e-drivers-de-corrente">Sistema de LEDs e Drivers de Corrente</h3>
+<ul>
+<li>BCR421: driver de corrente constante para LEDs — por que usar corrente constante e não tensão constante.</li>
+<li>Resistor REXT: define a corrente de saída do BCR421.</li>
+<li>LEDs RGBW de 1 W: potência, eficiência luminosa, dissipação térmica.</li>
+<li>Controle PWM de LEDs: dimmer de brilho via duty cycle dos Timers do STM32.</li>
+</ul>
+<h3 id="comunicacao-rf-sx1280-e-sky66112">Comunicação RF — SX1280 e SKY66112</h3>
+<ul>
+<li>SX1280: transceptor RF 2,4 GHz — comunicação entre Base Station e robô.</li>
+<li>Modulações suportadas: GFSK, LORA, FLRC — por que usar RF dedicado e não WiFi.</li>
+<li>SKY66112: Front-End Module (FEM) RF — amplifica potência de transmissão e melhora sensibilidade na recepção.</li>
+<li>Filtro FL520WFMT1: filtro de antena para rejeitar interferências fora da banda 2,4 GHz.</li>
+<li>SPI: interface entre STM32 e SX1280 para envio de pacotes.</li>
+<li>Base Station: STM32 + SX1280 + DP83848 (PHY Ethernet) + FT2232 (USB) — ponte entre PC e robôs.</li>
+</ul>
+<h3 id="projeto-de-pcb-profissional-no-altium-designer">Projeto de PCB Profissional no Altium Designer</h3>
+<ul>
+<li>Interface do Altium: Schematic Editor, PCB Editor, ActiveBOM, Draftsman.</li>
+<li>Criação de esquemático: componentes, net labels, hierarquia de folhas, power ports.</li>
+<li>Library management: criar componentes (schematic symbol + PCB footprint + 3D model) no Altium.</li>
+<li>Design Rules Check (DRC): definir regras de clearance, largura de trilha mínima, via size.</li>
+<li>Layout de PCB: empilhamento de camadas, plano de GND, separação entre potência e lógica.</li>
+<li>Roteamento: trilhas de sinal fino (0,1–0,2 mm), trilhas de potência largas (calculadas pela corrente).</li>
+<li>Capacitores de desacoplamento: posicionar o mais próximo possível dos pinos VCC de cada CI.</li>
+<li>Dissipação térmica: thermal pads, vias térmicas, copper pours para ICs de potência.</li>
+<li>Integridade de sinal: retorno de corrente, minimizar loop de corrente, terminações.</li>
+<li>Compatibilidade eletromagnética (EMC/EMI): separação de circuitos analógicos/digitais/RF, plano de terra contínuo.</li>
+<li>Geração de arquivos de fabricação: Gerber, NC Drill, BOM, CPL — envio para JLCPCB ou PCBWay.</li>
+<li>Altium 365: colaboração em nuvem, revisões de projeto, integração com Git.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
